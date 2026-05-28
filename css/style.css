@@ -65,7 +65,7 @@ body {
 }
 
 .container {
-  width: min(1200px, 90%);
+  width: min(1200px, 65%);
   margin: auto;
   padding-bottom: 4rem;
 }
@@ -208,6 +208,10 @@ input {
 }
 
 @media (max-width: 768px) {
+
+  .container{
+    width: 90%
+  }
   .hero h1 {
     font-size: 2rem;
   }
