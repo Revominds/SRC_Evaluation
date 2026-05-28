@@ -59,7 +59,7 @@ form.addEventListener('submit', async (e) => {
   try {
 
     await fetch(
-      'https://script.google.com/macros/s/AKfycbwlilBbYjBU6Yj1MjtkmCeYTzDSIvhLM7lm7FxK2dIu9xpZYh5N8CQP8OLIAcWxxyG4/exec',
+      'https://script.google.com/macros/s/AKfycbxbv3bUL-H0yp343ddcLci1EkhHBkgkBeUx5fhkpYIKJZF_oSx0rIs8Ik8EJZ43dC1U/exec',
       {
         method: 'POST',
         headers: {
