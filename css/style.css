@@ -1,0 +1,241 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #491592;
+  --secondary: #283cd2;
+  --dark: #07111f;
+  --card: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.12);
+  --text: #ffffff;
+  --muted: #bfc7d5;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #07111f, #111827);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(5, 91, 119, 0.35),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(88, 15, 160, 0.25),
+      transparent 30%
+    );
+  z-index: -1;
+}
+
+.hero {
+  padding: 5rem 1rem 3rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  color: var(--muted);
+  margin-bottom: 1rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.container {
+  width: min(1200px, 65%);
+  margin: auto;
+  padding-bottom: 4rem;
+}
+
+.card,
+.submit-card {
+  background: var(--card);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+}
+
+.card h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.4rem;
+  padding: 0.8rem;
+  border-bottom: 1px solid var(--primary);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  font-size: 1rem;
+}
+
+.criteria-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.criteria {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 18px;
+  padding: 1rem;
+}
+
+.criteria h4 {
+  margin-bottom: 0.8rem;
+}
+
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+.options input[type="radio"] {
+  /* display: none; */
+}
+
+/* default state */
+.option label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  border: 1px solid transparent;
+}
+
+/* HOVER */
+.option label:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-1px);
+}
+
+/* SELECTED STATE */
+.option input[type="radio"]:checked + span {
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: white;
+}
+
+.option label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.7rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.submit-card {
+  text-align: center;
+}
+
+.summary {
+  margin-bottom: 2rem;
+}
+
+.summary span {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.submit-btn {
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 14px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-3px);
+}
+
+#toast {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #10b981;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  display: none;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .options {
+    flex-direction: column;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.pagination button {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: linear-gradient(90deg, #6c63ff, #00c6ff);
+  color: white;
+  font-weight: 600;
+}
+
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
